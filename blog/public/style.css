@@ -1,0 +1,72 @@
+body {
+    background: rgb(122, 139, 155);
+}
+
+a {
+    color: rgb(39, 25, 163);
+    font-family: 'Indie Flower', cursive;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+form {
+    text-align: center;
+}
+
+
+a:hover {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: greenyellow;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Lobster Two', cursive;
+    color: rgb(105, 176, 197);
+    text-shadow:
+        -1px -1px 0px #000,
+        0px -1px 0px #000,
+        1px -1px 0px #000,
+        -1px 0px 0px #000,
+        1px 0px 0px #000,
+        -1px 1px 0px #000,
+        0px 1px 0px #000,
+        1px 1px 0px #000;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Lobster Two', cursive;
+    color: rgb(105, 176, 197);
+    text-shadow:
+        -1px -1px 0px #000,
+        0px -1px 0px #000,
+        1px -1px 0px #000,
+        -1px 0px 0px #000,
+        1px 0px 0px #000,
+        -1px 1px 0px #000,
+        0px 1px 0px #000,
+        1px 1px 0px #000;
+}
+
+nav {
+    text-align: center;
+}
+
+.indexUsers {
+    background: rgb(105, 176, 197);
+    margin: 4px;
+}
+
+.editBtn {
+    text-align: center;
+}

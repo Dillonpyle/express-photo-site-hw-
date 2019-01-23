@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<header>
+        <h1>Show Page for <%= user.name%></h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/users">Users Index</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>User Attributes</h2>
+            <ul>
+                <li>Name: <%= user.name%></li>
+                <section><a href="/users/<%=user._id%>"></a></section>
+                <div class="editBtn"><a href="/users/<%=user._id%>/edit">Edit</a></div>
+                <form action="/users/<%=user._id%>?_method=DELETE" method="POST">
+                    <button type="submit" class="btn btn-primary">Delete resource</button>
+                </form>
+            </ul>
+        </section>
+    </main>
+
+
+<% include ../partials/footer %>

@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+
+<header>
+        <h1>Users</h1>
+        <nav>
+        <button type="button" class="btn btn-primary"><a href="/">Home</a></button>
+        <button type="button" class="btn btn-primary"><a href="/users/new">Create a new User</a></button>
+        </nav> 
+</header>
+
+<main>
+<h2>List of Users</h2>
+<ul>
+    <%for(let i = 0; i < users.length; i++){%>
+        <div class='indexUsers'>
+            <li>
+                <a href='/users/<%=users[i]._id%>'><%=users[i].name%></a>
+            </li>
+        </div>
+    <%}%>
+    </ul>
+</main>
+
+<% include ../partials/footer %>

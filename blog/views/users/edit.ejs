@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<header>
+        <h1>Edit <%=user.name%></h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/users">Users Index</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+    <h2>Users Attributes</h2>
+        <form action="/users/<%=user._id%>?_method=PUT" method="POST">
+            <input type="text" name="name" value="<%=user.name%>">
+            <input type="text" name="img" value="<%=user.img%>">
+            <button type="submit"> Edit User</button>
+        </form>
+    </main>
+
+<% include ../partials/footer %>
