@@ -16,11 +16,17 @@
             <ul>
                 <li>Name: <%= user.name%></li>
                 <section><a href="/users/<%=user._id%>"></a></section>
+                
                 <div class="editBtn"><a href="/users/<%=user._id%>/edit">Edit</a></div>
-                <form action="/users/<%=user._id%>?_method=DELETE" method="POST">
+                <form action="/users/<%=user.id%>?_method=DELETE" method="POST">
                     <button type="submit" class="btn btn-primary">Delete resource</button>
                 </form>
             </ul>
+            <%for(let i = 0; i < user.photos.length; i++){%>
+                <h3> <%=user.photos[i].title%></h3>
+                <img class="show" src="<%=user.photos[i].img%>" alt="">
+            <%}%>
+            
         </section>
     </main>
 

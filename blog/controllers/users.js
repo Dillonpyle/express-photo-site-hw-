@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/users');
+const Photo = require('../models/photos');
 
 //index users
 router.get('/', (req, res) => {
@@ -31,6 +32,7 @@ router.post('/', (req, res) => {
 //show
 router.get('/:id', (req, res) => {
     User.findById(req.params.id, (err, foundUser) => {
+        console.log(`foundUser ${foundUser}`)
         if (err) {
             res.send(err)
         } else {
@@ -66,13 +68,23 @@ router.put('/:id', (req, res) => {
 
 //delete
 router.delete('/:id', (req, res) => {
-    User.findByIdAndRemove(req.params.id, (err, deleted) => {
-        if (err) {
-            res.send(err);
-        } else {
-            console.log(deleted);
-            res.redirect('/users');
+    User.findByIdAndRemove(req.params.id, (err, deletedUser) => {
+        const photoIds = [];
+        for (let i = 0; i < deletedUser.photos.length; i++) {
+            photoIds.push(deletedUser.photos[i]._id);
         }
+
+        Photo.deleteMany({
+                _id: {
+                    $in: photoIds
+                }
+            },
+            (err, data) => {
+                console.log(`data ${data}`)
+                console.log(`deleted ${deletedUser}`);
+                res.redirect('/users');
+            }
+        )
     });
 });
 

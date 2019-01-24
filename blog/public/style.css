@@ -13,6 +13,12 @@ form {
     text-align: center;
 }
 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 
 a:hover {
     text-transform: uppercase;
@@ -58,6 +64,21 @@ h2 {
         1px 1px 0px #000;
 }
 
+h3 {
+    text-align: center;
+    font-family: 'Lobster Two', cursive;
+    color: rgb(105, 176, 197);
+    text-shadow:
+        -1px -1px 0px #000,
+        0px -1px 0px #000,
+        1px -1px 0px #000,
+        -1px 0px 0px #000,
+        1px 0px 0px #000,
+        -1px 1px 0px #000,
+        0px 1px 0px #000,
+        1px 1px 0px #000;
+}
+
 nav {
     text-align: center;
 }
@@ -69,4 +90,11 @@ nav {
 
 .editBtn {
     text-align: center;
+}
+
+.show {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
 }

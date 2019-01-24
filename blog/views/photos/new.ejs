@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<header>
+      <h1>Create New Post</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Back</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+    <form action="/photos" method="POST">
+      <select name="userId">
+        <%for (let i = 0; i < users.length; i++) { %>
+
+           <option value="<%=users[i]._id%>"><%=users[i].name%></option>
+
+        <% } %>
+      </select><br/>
+      <input type="text" name="title" value="title" /><br/>
+      <input type="text" name="img" value="img URL"/><br/>
+      <textarea name="about">About the photo</textarea><br/>
+      <button class="btn btn-primary" type="submit">Create Post</button>
+    </form>
+    </main>
+<% include ../partials/footer %>

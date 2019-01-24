@@ -1,0 +1,19 @@
+<% include ../partials/header %>
+
+     <nav>
+     <button type="button" class="btn btn-primary"><a href="/">Home</a></button>
+     <button type="button" class="btn btn-primary"><a href="/photos">Back to Image Index</a></button>
+     </nav>
+
+     <h1><%=photo.title%></h1>
+     <h2>Posted By: <%=user.name%></h2>
+
+     <img class="show" src="<%=photo.img%>" alt="">
+
+     <div class="editBtn"><a href="/photos/<%=photo._id%>/edit">Edit</a></div>
+     <form action="/photos/<%=photo._id%>?_method=DELETE" method="POST">
+         <button type="submit" class="btn btn-primary">Delete resource</button>
+     </form>
+
+
+ <% include ../partials/footer %>

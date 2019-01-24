@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+
+<h1>Edit your post</h1>
+
+<nav>
+<button type="button" class="btn btn-primary"><a href="/">Home</a></button>
+<button type="button" class="btn btn-primary"><a href="/photos">Back to Image Index</a></button>
+</nav>
+<form action="/photos/<%=photo._id%>?_method=PUT" method="post">
+
+<input type="text" name="title" value="<%=photo.title%>"/><br/>
+<input type="text" name="img" value="<%=photo.img%>"/><br/>
+        <textarea name="body"><%=photo.about%></textarea><br/>
+        <button type="submit">Update Post</button>
+      </form>
+
+<% include ../partials/footer %>

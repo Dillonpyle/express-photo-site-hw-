@@ -1,17 +1,16 @@
 const mongoose = require('mongoose');
+const Photo = require('./photos');
 
 const userSchema = mongoose.Schema({
     name: {
         type: String,
         required: true
     },
-    img: {
+    password: {
         type: String,
         required: true
     },
-    description: {
-        type: String
-    }
+    photos: [Photo.schema]
 })
 
 const User = mongoose.model('User', userSchema);

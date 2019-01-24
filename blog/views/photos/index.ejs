@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+<header>
+  <h1>Photo Drop</h1>
+  <nav>
+    <ul>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/photos/new">Add a new Photo</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <h2>List of Photos</h2>
+  <ul>
+    <% for(let i = 0; i < photos.length; i++){ %>
+    <li>
+      <a href="/photos/<%=photos[i]._id%>">
+        <%=photos[i].title%></a>
+        <img src="<%=photos[i].img%>" alt="">
+        <form action="/photos/<%=photos._id%>?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-primary">Delete resource</button>
+    </form>
+    </li>
+    <% } %>
+  </ul>
+</main>
+
+<% include ../partials/footer %>
